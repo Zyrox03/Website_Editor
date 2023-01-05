@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="template1.css">
+    <link rel="stylesheet" href="product info.css">
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <link rel="stylesheet" href="EDITOR/Editor.css">
+    <!-- <script defer src="EDITOR/Editor_Contact.js"></script> -->
+    <script defer src="/EDITOR/NewContactEdior.js"></script>
+
+
+</head>
+
+<body  >
+
+    <!-- EDITOR -->
+    <div id="Editor" class="Editor">
+
+        <div class="editorLogo">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </div>
+
+        <div class="Edit_space">
+            <h2>Contact Form</h2>
+            <!-- Title in contact form -->
+            <form>
+
+
+                <div class="one_space_edit ">
+                    <h4>Title : </h4>
+                    <input id="Title" class="newTitle_input " type="text" placeholder="New title">
+                    <!-- <button class="EditBtn save_Title">OK</button> -->
+                    <button type="button" class="EditBtn search _title"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+
+                <!-- description in contact form -->
+
+                <div class="one_space_edit ">
+                    <h4>Description : </h4>
+                    <textarea id="Description" class="newDescription_input" type="text"
+                        placeholder="New description"></textarea>
+                    <!-- <button class="EditBtn save_description">OK</button> -->
+                    <button type="button" class="EditBtn search _description"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+
+
+                <!-- labels in contact form -->
+
+                <div class="one_space_edit ">
+                    <h4>Name Label : </h4>
+                    <input id="Name_Label" class="NameLabel_input" type="text" placeholder="Name Label"></input>
+                    <!-- <button class="EditBtn save_NameLabel">OK</button> -->
+                    <button type="button" class="EditBtn search _name"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="one_space_edit ">
+                    <h4>Email Label : </h4>
+                    <input id="Email_Label" class="EmailLabel_input" type="text" placeholder="Email Label"></input>
+                    <!-- <button class="EditBtn save_EmailLabel">OK</button> -->
+                    <button type="button" class="EditBtn search _email"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="one_space_edit ">
+                    <h4>Message Label : </h4>
+                    <input id="Message_Label" class="MessageLabel_input" type="text"
+                        placeholder="Message Label"></input>
+                    <!-- <button class="EditBtn save_MessageLabel">OK</button> -->
+                    <button type="button" class="EditBtn search _message"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="one_space_edit ">
+                    <h4>Send Button : </h4>
+                    <input id="SendBtn_Label" class="SendButton_input" type="text"
+                        placeholder="Send Button text"></input>
+                    <!-- <button class="EditBtn save_SendButton">OK</button> -->
+                    <button type="button" class="EditBtn search _submit"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+
+
+                <!-- info perso in contact form -->
+
+                <div class="one_space_edit ">
+                    <h4>Adresse : </h4>
+                    <input id="Adresse" class="Adresse_input " type="text" placeholder="Adresse here"></input>
+                    <!-- <button class="EditBtn save_Adresse">OK</button> -->
+                    <button type="button" class="EditBtn search _adresse"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                    <button class="EditBtn disable_Adresse disablable Adresse canDisable"><i
+                            class="fa-solid fa-trash canDisable"></i></button>
+                </div>
+
+                <div class="one_space_edit ">
+                    <h4>Téléphone 1 : </h4>
+                    <input id="Tel_1" class="tel_1_input" type="text" placeholder="Numéro de téléphone"></input>
+                    <!-- <button class="EditBtn save_Tel_1">OK</button> -->
+                    <button type="button" class="EditBtn search _tel_1"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                    <button class="EditBtn disable_Tel_1 disablable tel_1 canDisable tel_1"><i
+                            class="fa-solid fa-trash canDisable"></i></button>
+                </div>
+                
+                <div class="one_space_edit ">
+                    <h4>Téléphone 2 : </h4>
+                    <input id="Tel_2" class="tel_2_input" type="text" placeholder="Numéro de téléphone"></input>
+                    <!-- <button class="EditBtn save_Tel_2">OK</button> -->
+                    <button type="button" class="EditBtn search _tel_2"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                    <button class="EditBtn disable_Tel_2 disablable tel_2 canDisable tel_2"><i
+                            class="fa-solid fa-trash canDisable"></i></button>
+                </div>
+
+                <div class="one_space_edit ">
+                    <h4>Email : </h4>
+                    <input id="Email" class="email_input" type="text" placeholder="Your Email here"></input>
+                    <!-- <button class="EditBtn save_email">OK</button> -->
+                    <button type="button" class="EditBtn search _storeEmail"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                    <button class="EditBtn disable_email disablable email canDisable email"><i class="fa-solid fa-trash canDisable"></i></button>
+                </div>
+
+
+
+
+                <!-- Socials in contact form -->
+
+                <div class="one_space_edit ">
+                    <h4>Socials : </h4>
+                    <div class="one__social">
+                        <label for="Instagram :">Instagram</label>
+                        <input class="Instagram CheckBox  " type="checkbox" name="Instagram" id="Instagram_isChecked"
+                            checked>
+                    </div>
+                    <input class=" Instagram_Link_input" type="text" placeholder="Your Instagram here"
+                        id="Instagram"></input>
+                    <div class="one__social">
+                        <label for="Facebook :">Facebook</label>
+                        <input class="Facebook CheckBox  " type="checkbox" name="Facebook" id="Facebook_isChecked"
+                            checked>
+                    </div>
+                    <input class=" Facebook_Link_input" type="text" placeholder="Your Facebook here"
+                        id="Facebook"></input>
+
+                    <div class="one__social">
+                        <label for="Twitter :">Twitter</label>
+                        <input class="Twitter CheckBox " type="checkbox" name="Twitter" id="Twitter_isChecked">
+                    </div>
+                    <input class=" Twitter_Link_input" type="text" placeholder="Your Twitter here" id="Twitter"
+                        disabled></input>
+
+                </div>
+
+
+                <button type="button" class="saveAll"> Save Everything</button>
+                <button type="button" class="resetAll"> Reset Everything</button>
+
+
+
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="shadowing hide"></div>
+
+
+    <!-- navigation bar -->
+    <nav>
+        <!-- <div class="top_nav">
+            <h2>This is a totally random text, please forgive me !</h2>
+        </div> -->
+        <div class="mainNav">
+
+            <!-- <div class="empty"></div> -->
+            <div class="humbars">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </div>
+
+
+            <div class="logo">
+                <a href="/template1.html">
+                    <img src="/images/store.png" alt="">
+                </a>
+            </div>
+
+            <ul class="mainLinks">
+
+                <li>
+                    <div class="nav_Line"></div>
+                    <a href="/template1.html">Accueil</a>
+
+                </li>
+
+                <li class="Category_li">
+                    <div class="nav_Line"></div>
+                    <a href="Category.html">Categories <i class="fa-solid fa-chevron-down"></i></a>
+
+
+                    <div class="DropDown">
+                        <ul>
+                            <li>I Always Loved <div class="li_Line"> </div>
+                            </li>
+
+                            <li>LINKED <div class="li_Line"> </div>
+
+                            </li>
+
+
+                            <li>LINKED <div class="li_Line"> </div>
+
+                            </li>
+
+                            <li>LINKED <div class="li_Line"> </div>
+
+                            </li>
+
+                            <li>LINKED <div class="li_Line"> </div>
+
+                            </li>
+
+                            <li>LINKED <div class="li_Line"> </div>
+
+                            </li>
+
+                            <li>LINKED <div class="li_Line"> </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="nav_Line"></div>
+                    <a href="/Contact.html">Contactez-nous</a>
+
+                </li>
+
+            </ul>
+
+            <div class="account">
+                <i class="fa-regular fa-user"></i>
+            </div>
+
+
+            <div class="navSide">
+
+                <div class="logoSide">
+                    <img src="/images/store.png" alt="">
+                </div>
+
+                <ul class="NavLinksSide">
+
+
+                    <li><a href="/template1.html">Accueil</a></li>
+                    <li class="Category_navLink">Categories <i class="fa-solid fa-chevron-right"></i></li>
+                    <div class="Categories_DropDown">
+                        <ul>
+                            <li><a href="">LINK</a></li>
+                            <li><a href="">LINK</a></li>
+                            <li><a href="">LINK</a></li>
+                            <li><a href="">LINK</a></li>
+                            <!-- <li><a href="">LINK</a></li>
+                            <li><a href="">LINK</a></li>
+                            <li><a href="">LINK</a></li> -->
+                        </ul>
+                    </div>
+                    <li><a href="/Contact.html">Contactez-nous</a></li>
+
+
+
+
+                </ul>
+
+                <div class="socialSideNav">
+                    <div class="one_social"><a href=""><i class="fa-brands fa-facebook"></i></a></div>
+                    <div class="one_social"><a href=""><i class="fa-brands fa-linkedin"></i></a></div>
+                    <div class="one_social"><a href=""><i class="fa-brands fa-instagram"></i></a></div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact  -->
+
+    <section class="Contact">
+        <div class="contact_form">
+
+            <div class="logo">
+                <img src="/images/store.png" alt="">
+            </div>
+
+            <form>
+                <h2 class="contact_title">
+                    Contactez-nous
+
+                </h2>
+
+                <p class="contact_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, facere
+                    aliquid nam dolorem
+                    repudiandae blanditiis? Possimus autem esse molestias.</p>
+
+                <div class="contact_name">
+                    <label for="C_Name" class="YourName">Full Name : </label>
+                    <div class="N_Inputs">
+                        <input type="text" name="first" id="C_Name" placeholder="First name">
+                        <input type="text" name="second" placeholder="Second name">
+                    </div>
+                </div>
+
+                <div class="contact_email">
+                    <label for="C_Email" class="YourEmail">Email : </label>
+                    <input type="email" name="C_Email" id="C_Email" placeholder="Enter Your Email">
+                </div>
+
+                <div class="contact_message">
+                    <label for="message" class="YourMessage">Message : </label>
+                    <textarea name="message" id="message" placeholder="Your message here"></textarea>
+                </div>
+
+                <div class="submitBTN">
+                    <button type="submit" class="SEND contact_submit">Send</button>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="contact_info">
+
+            <div class="info_card perso_info">
+                <div class="one_info Adresse_info ">
+                    <b>Adresse : </b>
+                    <p class="Adresse1_DIV contact_adresse"> Chellata 1 , Akbou ,Bejaia</p>
+                </div>
+
+                <div class="one_info tel_1_info">
+                    <b>Teléphone 1 : </b>
+                    <p class="tel_1_DIV contact_tel_1">+213 42 09 51 23 </p>
+                </div>
+
+                <div class="one_info tel_2_info">
+                    <b>Teléphone 2 : </b>
+                    <p class="tel_2_DIV contact_tel_2">+213 42 09 51 23 </p>
+                </div>
+
+                <div class="one_info email_info">
+                    <b>Email : </b>
+                    <p class="email_DIV contact_storeEmail">Chekchouka1804@Algerienne.com </p>
+                </div>
+            </div>
+            <div class="info_card map">
+                <a href=""><img src="/images/store3.jpg" alt="MAP"></a>
+            </div>
+            <div class="info_card social_info">
+                <a class="  fb_link" href=""> <i class="fa-brands fa-facebook"></i></a>
+                <a class=" Insta_link" href=""> <i class="fa-brands fa-instagram"></i></a>
+                <a class=" Tweet_link" href=""> <i class="fa-brands fa-twitter"></i></a>
+                <!-- <a href=""> <i class="fa-brands fa-youtube"></i></a>   -->
+
+
+            </div>
+
+        </div>
+
+        <div class="bigMap">
+            <a href="">
+                <img src="/images/store3.jpg" alt="">
+            </a>
+        </div>
+    </section>
+
+
+
+    <!-- footer -->
+
+    <footer>
+        <div class="footer_col text">
+            <div class="store_logo_footer">
+                <img src="/images/store.png" alt="">
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt at ea porro maiores nam amet soluta tenetur
+                ex consequuntur veniam. </p>
+        </div>
+        <div class="footer_col links">
+            <h2>TITLE
+                <div class="mini_line"></div>
+            </h2>
+            <ul>
+                <li><a href="">LINK</a></li>
+                <li><a href="">LINK</a></li>
+                <li><a href="">LINK</a></li>
+                <li><a href="">LINK</a></li>
+
+            </ul>
+        </div>
+        <div class="footer_col links">
+            <h2>TITLE
+                <div class="mini_line"></div>
+
+            </h2>
+            <ul>
+                <li><a href="">LINK</a></li>
+                <li><a href="">LINK</a></li>
+                <li><a href="">LINK</a></li>
+                <li><a href="">LINK</a></li>
+
+            </ul>
+        </div>
+
+        <div class="footer_col links">
+            <h2>TITLE
+                <div class="mini_line"></div>
+
+            </h2>
+            <ul>
+                <li><a href="">LINK</a></li>
+                <li><a href="">LINK</a></li>
+                <li><a href="">LINK</a></li>
+                <li><a href="">LINK</a></li>
+
+            </ul>
+        </div>
+
+
+        <div class="social_footer">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+        </div>
+
+        <!-- <div class="footer_col links">
+            <h2>TITLE</h2>
+            <ul>
+                <li>ProlongationProlonga</li>
+                <li>LINK</li>
+                <li>LINK</li>
+                <li>LINK</li>
+            </ul>
+        </div> -->
+        <!-- <div class="footer_col">
+             <h2>TITLE</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+          <form >
+            <input type="email" name="email" id="email" placeholder="Enter your email here">
+            <button>GO</button>
+          </form>
+        </div> -->
+    </footer>
+
+    <div class="Copyright">
+        <h4>Made with <a href="index.html">stoore.dz</a></h4>
+
+    </div>
+
+    <script src="Contact.js"></script>
+<!--     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+        integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"
+        integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+        
+    
+
+</body>
+
+</html>

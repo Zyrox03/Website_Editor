@@ -1,0 +1,385 @@
+.Product_info{
+    padding-top: 7em;
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+
+
+
+}
+
+.row_info{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+}
+.img_info{
+    width: 25em;
+    height: 25em;
+    margin: 1em;
+    position: sticky;
+    top: 7em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* box-shadow:  0 0 5px 1px grey; */
+    
+
+
+}
+
+
+.img_info .bigImage{
+    width: 100%;
+    height: 78%;
+    transition: all 0.5s;
+
+
+}
+
+
+
+.img_info img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.img_info .smallImage{
+    width: 100%;
+    height: 20%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.smallImage .lilImage{
+    width: 24%;
+    height: 100%;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin: 0 0.1em;
+
+}
+
+.smallImage .lilImage.active{
+    opacity: 0.8;
+
+}
+
+.text_info{
+    width: 45em;
+    height: fit-content;
+    margin: 1em;
+
+    padding: 1em;
+
+
+
+}
+
+
+/* text_info stuff  */
+
+.info_title{
+    font-size: 2em;
+
+}
+
+.text_info h4{
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    color: darkblue;
+}
+
+.outside_Title{
+    display: none;
+}
+
+.inside_Title{
+    display:flex;
+}
+
+.outside_Title,  .inside_Title{
+    margin-bottom: 1em;
+}
+
+
+.text_info p, .text_info ul{
+    font-size: 1.1em;
+}
+
+.lil_description{
+    margin-bottom: 1em;
+}
+
+/* product_description */
+/* 
+.product_description{
+    font-size: 1.1em;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+ */
+
+
+
+
+
+/* Product form */
+
+.qty_div{
+    margin: 1em 0;
+    width: 7em;
+    height: 2em ;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+
+}
+
+.plus , .minus{
+    background-color: rgb(13, 67, 228);
+    color: white;
+    width: 2em;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+
+    transition: all 0.25s;
+}
+
+.plus:hover , .minus:hover{
+    background-color: royalblue;
+}
+
+
+.product_form{
+    /* background-color: gainsboro; */
+    background: linear-gradient(45deg,gainsboro 90%,rgb(0, 0, 202) 10%);
+    border-radius: 10px;
+    padding: 2em 1em;
+    width: 38em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: fit-content;
+}
+
+.product_form h2{
+    width: 100%;
+    text-decoration: underline;
+}
+
+
+
+.product_form input, .product_form select{
+    padding: 0.5em;
+    height: 2.5em;
+    width: 20em;
+    margin: 0.5em;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.product_form input:focus, .product_form select:focus{
+    outline: 1px solid darkblue;
+}
+
+.product_form label{
+    padding-left: 0.5em;
+}
+.name_form{
+    margin-bottom: 1em;
+width: 100%;
+}
+
+.email-tel{
+    width: 100%;
+    display: flex;
+    margin-bottom: 1em;
+    flex-wrap: wrap;
+
+}
+
+
+
+
+
+
+
+.commune_form, .wilaya_form{
+    margin-bottom: 1em;
+    width: 50%;
+
+    
+}
+
+.submit_form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+.product_form button{
+    padding: 0.5em;
+    width: 20em;
+    margin: 0.5em;
+    height: 3em;
+
+    border-radius: 5px;
+    border: 1px solid gray;
+    cursor: pointer;
+
+    background-color: red;
+    color: white;
+    transition: all 0.25s;
+}
+
+.product_form button:hover{
+   
+
+    background-color: rgb(255, 31, 31);
+    color: white;
+}
+
+
+
+.remarque_form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
+
+.remarque_form textarea{
+    margin-top: 1em;
+    max-width: 90%;
+    min-width: 90%;
+    max-height:8em ;
+    min-height: 8em;
+
+    padding: 1em;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.remarque_form textarea:focus{
+    outline: 1px solid darkblue;
+
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width : 1191px) {
+ 
+.img_info{
+  
+    position: static;
+
+}
+
+.text_info{
+    width:95%;
+
+}
+
+
+.outside_Title{
+    display: flex;
+margin-top: 1em;
+    justify-content: center;
+}
+
+.inside_Title{
+    display:none;
+    
+}
+}
+
+
+
+@media screen and (max-width : 650px){
+
+
+    .product_form{
+        width: 100%;
+     
+    }
+
+    .name_form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .email-tel{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+   .email_form, .tel_form{
+    
+    width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+   }
+
+    .commune_form, .wilaya_form{
+        margin-bottom: 1em;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+@media screen and (max-width : 360px){
+    .product_form input, .product_form select, .product_form textarea{
+        width: 95%;
+    }
+}
