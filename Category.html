@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
     <link rel="stylesheet" href="EDITOR/Editor.css">
-    <script defer src="EDITOR/Editor_Category.js"></script>
+    <script defer src="EDITOR/NewCategoryEditor.js"></script>
 
 </head>
 
@@ -33,29 +33,43 @@
         <div class="Edit_space">
             <h2>Category Form</h2>
 
+            <div class="one_space_edit">
+                <h4>Categories title</h4>
+                <input type="text" class="C_title_input" name="C_title" id="C_title" placeholder="Categories title">
+                <button type="button" class="EditBtn search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
             <div class="one_space_edit ">
                 <h4>Categories number : </h4>
                 <div class="from_one_to_seven_DIV">
-                    <div class="numberSquare model_1">1</div>
-                    <div class="numberSquare model_2">2</div>
-                    <div class="numberSquare model_3">3</div>
-                    <div class="numberSquare model_4">4</div>
-                    <div class="numberSquare model_5">5</div>
-                    <div class="numberSquare model_6">6</div>
-                    <div class="numberSquare model_7">7</div>
+                    <div id="1" class="numberSquare model_1">1</div>
+                    <div id="2" class="numberSquare model_2">2</div>
+                    <div id="3" class="numberSquare model_3">3</div>
+                    <div id="4" class="numberSquare model_4">4</div>
+                    <div id="5" class="numberSquare model_5">5</div>
+                    <div id="6" class="numberSquare model_6">6</div>
+                    <div id="7" class="numberSquare model_7">7</div>
 
                 </div>
               
 
-                <button class="EditBtn searchTitle"><i class="fa-solid fa-info"></i></button>
+                <button class="EditBtn "><i class="fa-solid fa-info"></i></button>
             </div>
 
             <div class="Categories_fill_inputs">
 
-                
+                <!-- <div class="one_space_edit">
+                    <h4>Category 1 :</h4>
+                    <input type="text" name="C_name" id="C_name" placeholder="Category Name">
+                    <input type="file" name="C_image" id="C_image" >
+                </div> -->
+
+               
 
             </div>
-            <button class="EditBtn save_Category_info">OK</button>
+            <!-- <button class="EditBtn save_Category_info">OK</button> -->
+             <button type="button" class="saveAll"> Save Everything</button>
+                <button type="button" class="resetAll"> Reset Everything</button>
 
 
         </div>
@@ -162,7 +176,8 @@
                     <li class="Category_navLink">Categories <i class="fa-solid fa-chevron-right"></i></li>
                     <div class="Categories_DropDown">
                         <ul>
-                       
+                            <!-- <li><a href="">LINK</a></li> -->
+
                         </ul>
                     </div>
                     <li><a href="Contact.html">Contactez-nous</a></li>
@@ -192,91 +207,84 @@
     <!-- categories -->
 
     <div class="title Category_title">
-        <h2>This is text</h2>
+        <h2 class="category_title">This is text</h2>
         <div class="line"></div>
     </div>
 
     <section class="categories" id="Category_Page">
-        <!-- /template1 line 752 flex-direction to column -->
+  
 
-        <div class="category_left_top">
-            <div class=" one_category block_category Category_Block_1 ">
-                <a href="">
-                    <div class="black_on_hover">
-
-                    </div>
-                    <img src="/BackUp/Category1.png" alt="1">
-                    <button>Category</button>
-                </a>
-            </div>
-            <div class="one_category block_category  Category_Block_2">
-                <a href="">
-                    <div class="black_on_hover">
-
-                    </div>
-                    <img src="BackUp/Category2.png" alt="2">
-
-                    <button>Category</button>
-                </a>
-
-            </div>
-            <div class="one_category block_category Category_Block_3">
-                <a href="">
-                    <div class="black_on_hover">
-
-                    </div>
-                    <img src="BackUp/Category3.png" alt="3">
-
-                    <button>Category</button>
-                </a>
-
-            </div>
-            <div class="one_category block_category Category_Block_4">
-
-                <a href="">
-                    <div class="black_on_hover">
-
-                    </div>
-                    <img src="BackUp/Category4.png" alt="4">
-
-                    <button>Category</button>
-                </a>
-
-            </div>
-        </div>
-        <div class="category_right_top block_category Category_Block_5">
+        <!-- <div class=" one_category">
             <a href="">
                 <div class="black_on_hover">
 
                 </div>
-                <img src="BackUp/Category5.png" alt="5">
-
+                <img src="/BackUp/Category1.png" alt="1">
                 <button>Category</button>
             </a>
+        </div> -->
 
-        </div>
-        <div class="category_left_bottom block_category Category_Block_6">
+        <!-- <div class=" one_category   ">
             <a href="">
                 <div class="black_on_hover">
 
                 </div>
-                <img src="BackUp/Category6.png" alt="6">
-
+                <img src="/BackUp/Category2.png" alt="2">
                 <button>Category</button>
             </a>
-
         </div>
-        <div class="category_right_bottom block_category Category_Block_7">
+
+        <div class=" one_category   ">
             <a href="">
                 <div class="black_on_hover">
 
                 </div>
-                <img src="BackUp/Category7.png" alt="7">
-
+                <img src="/BackUp/Category3.png" alt="3">
                 <button>Category</button>
             </a>
-
         </div>
+
+        <div class=" one_category   ">
+            <a href="">
+                <div class="black_on_hover">
+
+                </div>
+                <img src="/BackUp/Category4.png" alt="4">
+                <button>Category</button>
+            </a>
+        </div>
+
+        <div class=" one_category   ">
+            <a href="">
+                <div class="black_on_hover">
+
+                </div>
+                <img src="/BackUp/Category5.png" alt="5">
+                <button>Category</button>
+            </a>
+        </div>
+
+        <div class=" one_category   ">
+            <a href="">
+                <div class="black_on_hover">
+
+                </div>
+                <img src="/BackUp/Category6.png" alt="6">
+                <button>Category</button>
+            </a>
+        </div>
+
+        <div class=" one_category   ">
+            <a href="">
+                <div class="black_on_hover">
+
+                </div>
+                <img src="/BackUp/Category7.png" alt="7">
+                <button>Category</button>
+            </a>
+        </div> -->
+
+
 
     </section>
 

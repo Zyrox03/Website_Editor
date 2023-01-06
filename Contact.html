@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
     <link rel="stylesheet" href="EDITOR/Editor.css">
-    <!-- <script defer src="EDITOR/Editor_Contact.js"></script> -->
+   
     <script defer src="EDITOR/NewContactEdior.js"></script>
 
 
@@ -42,8 +42,7 @@
                     <h4>Title : </h4>
                     <input id="Title" class="newTitle_input " type="text" placeholder="New title">
                     <!-- <button class="EditBtn save_Title">OK</button> -->
-                    <button type="button" class="EditBtn search _title"><i
-                            class="fa-solid fa-magnifying-glass"></i></button>
+                    <button type="button" class="EditBtn search _title"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
 
                 <!-- description in contact form -->
@@ -100,8 +99,7 @@
                     <!-- <button class="EditBtn save_Adresse">OK</button> -->
                     <button type="button" class="EditBtn search _adresse"><i
                             class="fa-solid fa-magnifying-glass"></i></button>
-                    <button class="EditBtn disable_Adresse disablable Adresse canDisable"><i
-                            class="fa-solid fa-trash canDisable"></i></button>
+                    <button class="EditBtn disable_Adresse disablable Adresse canDisable"><i class="fa-solid fa-trash canDisable"></i></button>
                 </div>
 
                 <div class="one_space_edit ">
@@ -133,6 +131,17 @@
                     <button class="EditBtn disable_email disablable email canDisable email"><i class="fa-solid fa-trash canDisable"></i></button>
                 </div>
 
+                <!-- image map info -->
+
+                <div class="one_space_edit">
+                    <h4>Map : </h4>
+                    <input type="file" name="C_image" id="C_image" >
+                    <label for="mapLink :">Link to the Map :</label>
+                    <input type="text" class="mapLink_input" name="map_link" id="map_link" placeholder="Link to map">
+                    <button class="EditBtn disable_email disablable mapLink canDisable mapLink"><i class="fa-solid fa-trash canDisable"></i></button>
+
+                </div>
+
 
 
 
@@ -142,25 +151,32 @@
                     <h4>Socials : </h4>
                     <div class="one__social">
                         <label for="Instagram :">Instagram</label>
-                        <input class="Instagram CheckBox  " type="checkbox" name="Instagram" id="Instagram_isChecked"
-                            checked>
+                        
+                        
                     </div>
-                    <input class=" Instagram_Link_input" type="text" placeholder="Your Instagram here"
+                    <input class="Instagram_input" type="text" placeholder="Your Instagram here"
                         id="Instagram"></input>
+                    <button class="EditBtn disable_Adresse disablable Instagram canDisable"><i class="fa-solid fa-trash canDisable"></i></button>
+
                     <div class="one__social">
                         <label for="Facebook :">Facebook</label>
-                        <input class="Facebook CheckBox  " type="checkbox" name="Facebook" id="Facebook_isChecked"
-                            checked>
+                        
+                        
                     </div>
-                    <input class=" Facebook_Link_input" type="text" placeholder="Your Facebook here"
+                    <input class="Facebook_input" type="text" placeholder="Your Facebook here"
                         id="Facebook"></input>
+                    <button class="EditBtn disable_Adresse disablable Facebook canDisable"><i class="fa-solid fa-trash canDisable"></i></button>
+
 
                     <div class="one__social">
                         <label for="Twitter :">Twitter</label>
-                        <input class="Twitter CheckBox " type="checkbox" name="Twitter" id="Twitter_isChecked">
+                        
+                        
                     </div>
-                    <input class=" Twitter_Link_input" type="text" placeholder="Your Twitter here" id="Twitter"
-                        disabled></input>
+                    <input class=" Twitter_input" type="text" placeholder="Your Twitter here" id="Twitter"
+                        ></input>
+                    <button class="EditBtn disable_Adresse disablable Twitter canDisable"><i class="fa-solid fa-trash canDisable"></i></button>
+
 
                 </div>
 
@@ -215,7 +231,7 @@
 
                     <div class="DropDown">
                         <ul>
-                            <li>I Always Loved <div class="li_Line"> </div>
+                            <!-- <li>I Always Loved <div class="li_Line"> </div>
                             </li>
 
                             <li>LINKED <div class="li_Line"> </div>
@@ -241,7 +257,7 @@
 
                             <li>LINKED <div class="li_Line"> </div>
 
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </li>
@@ -272,10 +288,10 @@
                     <li class="Category_navLink">Categories <i class="fa-solid fa-chevron-right"></i></li>
                     <div class="Categories_DropDown">
                         <ul>
+                            <!-- <li><a href="">LINK</a></li>
                             <li><a href="">LINK</a></li>
                             <li><a href="">LINK</a></li>
-                            <li><a href="">LINK</a></li>
-                            <li><a href="">LINK</a></li>
+                            <li><a href="">LINK</a></li> -->
                             <!-- <li><a href="">LINK</a></li>
                             <li><a href="">LINK</a></li>
                             <li><a href="">LINK</a></li> -->
@@ -369,7 +385,7 @@
                 </div>
             </div>
             <div class="info_card map">
-                <a href=""><img src="images/store3.jpg" alt="MAP"></a>
+                <a href=""><img src="images/GoogleMapTA.webp" alt="MAP"></a>
             </div>
             <div class="info_card social_info">
                 <a class="  fb_link" href=""> <i class="fa-brands fa-facebook"></i></a>
@@ -384,7 +400,7 @@
 
         <div class="bigMap">
             <a href="">
-                <img src="images/store3.jpg" alt="">
+                <img src="images/GoogleMapTA.webp" alt="map">
             </a>
         </div>
     </section>
@@ -473,15 +489,7 @@
     </div>
 
     <script src="Contact.js"></script>
-<!--     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
-        integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"
-        integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-        
     
 
 </body>

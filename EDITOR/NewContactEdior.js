@@ -76,15 +76,17 @@ let addContactInfo = (e) => {
         Tel_2: document.getElementById('Tel_2').value,
         Email: document.getElementById('Email').value,
 
-        // checked values
-        Instagram_isChecked: document.getElementById('Instagram_isChecked').checked,
+        // map info
+
+        MapLink : document.getElementById('map_link').value,
+
+        // Social values
+
         Instagram: document.getElementById('Instagram').value,
-        Facebook_isChecked: document.getElementById('Facebook_isChecked').checked,
         Facebook: document.getElementById('Facebook').value,
-        Twitter_isChecked: document.getElementById('Twitter_isChecked').checked,
         Twitter: document.getElementById('Twitter').value,
 
-        
+
 
     }
 
@@ -96,7 +98,7 @@ let addContactInfo = (e) => {
 
 
 
-    
+
 
     document.querySelector('.contact_title').innerHTML = document.getElementById('Title').value
     document.querySelector('.contact_description').innerHTML = document.getElementById('Description').value
@@ -108,6 +110,23 @@ let addContactInfo = (e) => {
     document.querySelector('.tel_1_DIV').innerHTML = document.getElementById('Tel_1').value
     document.querySelector('.tel_2_DIV').innerHTML = document.getElementById('Tel_2').value
     document.querySelector('.email_DIV').innerHTML = document.getElementById('Email').value
+
+
+    // give href value to map link
+
+    document.querySelector('.bigMap a').value =  JSON.parse(localStorage.getItem('formContact'))[0].MapLink
+    document.querySelector('.bigMap a').href =  JSON.parse(localStorage.getItem('formContact'))[0].MapLink
+
+
+    // give href value to socials
+
+    document.querySelector('.fb_link').value =  JSON.parse(localStorage.getItem('formContact'))[0].Facebook
+    document.querySelector('.fb_link').href =  JSON.parse(localStorage.getItem('formContact'))[0].Facebook
+    document.querySelector('.Insta_link').value =  JSON.parse(localStorage.getItem('formContact'))[0].Instagram
+    document.querySelector('.Insta_link').href =  JSON.parse(localStorage.getItem('formContact'))[0].Instagram
+    document.querySelector('.Tweet_link').value =  JSON.parse(localStorage.getItem('formContact'))[0].Twitter
+    document.querySelector('.Tweet_link').href =  JSON.parse(localStorage.getItem('formContact'))[0].Twitter
+
 
 
 
@@ -125,21 +144,6 @@ function flashColor(element) {
     setTimeout(() => {
         document.querySelector(`.${element}`).style.background = 'transparent'
     }, 750)
-}
-
-function isCheckbox(e) {
-    e.preventDefault()
-    let checkBox = e.target
-
-    let isChecked = checkBox.checked
-    let socialInput = document.querySelector(`.${checkBox.classList[0]}_Link_input`)
-    if (isChecked === true) {
-        socialInput.disabled = false
-    } else {
-        socialInput.disabled = true
-
-    }
-    return socialInput;
 }
 
 
@@ -160,13 +164,18 @@ function inputOnLoad() {
     document.getElementById('Tel_2').value = JSON.parse(localStorage.getItem('formContact'))[0].Tel_2
     document.getElementById('Email').value = JSON.parse(localStorage.getItem('formContact'))[0].Email
 
-    document.getElementById('Instagram_isChecked').checked = JSON.parse(localStorage.getItem('formContact'))[0].Instagram_isChecked
-    document.getElementById('Instagram').value = JSON.parse(localStorage.getItem('formContact'))[0].Instagram
-    document.getElementById('Facebook_isChecked').checked = JSON.parse(localStorage.getItem('formContact'))[0].Facebook_isChecked
-    document.getElementById('Facebook').value = JSON.parse(localStorage.getItem('formContact'))[0].Facebook
-    document.getElementById('Twitter_isChecked').checked = JSON.parse(localStorage.getItem('formContact'))[0].Twitter_isChecked
-    document.getElementById('Twitter').value = JSON.parse(localStorage.getItem('formContact'))[0].Twitter
 
+    document.querySelector('.mapLink_input').value =  JSON.parse(localStorage.getItem('formContact'))[0].MapLink
+    document.querySelector('.bigMap a').href =  JSON.parse(localStorage.getItem('formContact'))[0].MapLink
+
+
+
+    document.querySelector('.Facebook_input').value =  JSON.parse(localStorage.getItem('formContact'))[0].Facebook
+    document.querySelector('.fb_link').href =  JSON.parse(localStorage.getItem('formContact'))[0].Facebook
+    document.querySelector('.Instagram_input').value =  JSON.parse(localStorage.getItem('formContact'))[0].Instagram
+    document.querySelector('.Insta_link').href =  JSON.parse(localStorage.getItem('formContact'))[0].Instagram
+    document.querySelector('.Twitter_input').value =  JSON.parse(localStorage.getItem('formContact'))[0].Twitter
+    document.querySelector('.Tweet_link').href =  JSON.parse(localStorage.getItem('formContact'))[0].Twitter
 
 
     // DOM (transfer values to page content)
@@ -193,41 +202,126 @@ function inputOnLoad() {
 
 
 
-    if (document.getElementById('Instagram_isChecked').checked === true) {
-        document.querySelector('.Instagram_Link_input').disabled = false
-    } else {
-        document.querySelector('.Instagram_Link_input').disabled = true
-
-    }
-
-    if (document.getElementById('Facebook_isChecked').checked === true) {
-        document.querySelector('.Facebook_Link_input').disabled = false
-    } else {
-        document.querySelector('.Facebook_Link_input').disabled = true
-
-    }
-
-    if (document.getElementById('Twitter_isChecked').checked === true) {
-        document.querySelector('.Twitter_Link_input').disabled = false
-    } else {
-        document.querySelector('.Twitter_Link_input').disabled = true
-
-    }
 
 
-    for(let i = 0; i<disablableBtns.length; i++){
-    
-          if(document.querySelector(`.${disablableBtns[i].classList[3]}_input`).disabled === true){
-        console.log('hi')
-          }else{
-            console.log('game')
-          }
+    // category Navigation on load
+
+    let DropDown_Ul = document.querySelector('.DropDown ul')
+    let Categories_DropDown_Ul = document.querySelector('.Categories_DropDown ul')
+
+    function appendCategoryNav(model_Number) {
+
+        DropDown_Ul.innerHTML = ''
+        Categories_DropDown_Ul.innerHTML = ''
+
+        for (let i = 1; i <= model_Number; i++) {
+
+            let LI = document.createElement('LI')
+            let LI_side = document.createElement('LI')
+
+
+            let C_Nav_Link = document.createElement('A')
+            C_Nav_Link.href = ''
+            let C_NavSide_Link = document.createElement('A')
+            C_NavSide_Link.href = ''
+            C_NavSide_Link.innerHTML = `Category ${i}`
+            C_NavSide_Link.classList.add(`C_name_MainLink_${i}`)
+
+
+
+
+            let li_Line = document.createElement('DIV')
+            li_Line.classList.add('li_Line')
+
+            let Li_P = document.createElement('P')
+            Li_P.innerHTML = `Category ${i}`
+            Li_P.classList.add(`C_name_SideLink_${i}`)
+
+
+
+            // append for mainNav
+            C_Nav_Link.append(Li_P)
+            C_Nav_Link.append(li_Line)
+
+            LI.append(C_Nav_Link)
+
+            DropDown_Ul.append(LI)
+
+            //append for side Nav
+
+            LI_side.append(C_NavSide_Link)
+            Categories_DropDown_Ul.append(LI_side)
+
+
+
+
+
         }
-    
-    
+
+    }
+
+    appendCategoryNav(JSON.parse(localStorage.getItem("model_Number")))
 
 
-  
+    // Categor nav links get category name 
+
+    if (document.querySelector(`.C_name_MainLink_1`) === null) {
+    } else {
+        document.querySelector(`.C_name_MainLink_1`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_1
+        document.querySelector(`.C_name_SideLink_1`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_1
+
+    }
+
+    if (document.querySelector(`.C_name_MainLink_2`) === null) {
+    } else {
+        document.querySelector(`.C_name_MainLink_2`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_2
+        document.querySelector(`.C_name_SideLink_2`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_2
+
+
+    }
+
+    if (document.querySelector(`.C_name_MainLink_3`) === null) {
+    } else {
+        document.querySelector(`.C_name_MainLink_3`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_3
+        document.querySelector(`.C_name_SideLink_3`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_3
+
+
+    }
+
+    if (document.querySelector(`.C_name_MainLink_4`) === null) {
+    } else {
+        document.querySelector(`.C_name_MainLink_4`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_4
+        document.querySelector(`.C_name_SideLink_4`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_4
+
+
+    }
+
+    if (document.querySelector(`.C_name_MainLink_5`) === null) {
+    } else {
+        document.querySelector(`.C_name_MainLink_5`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_5
+        document.querySelector(`.C_name_SideLink_5`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_5
+
+
+    }
+
+    if (document.querySelector(`.C_name_MainLink_6`) === null) {
+    } else {
+        document.querySelector(`.C_name_MainLink_6`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_6
+        document.querySelector(`.C_name_SideLink_6`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_6
+
+
+    }
+
+    if (document.querySelector(`.C_name_MainLink_7`) === null) {
+    } else {
+        document.querySelector(`.C_name_MainLink_7`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_7
+        document.querySelector(`.C_name_SideLink_7`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_7
+
+
+    }
+
+
+
 
 }
 
@@ -236,10 +330,10 @@ function inputOnLoad() {
 
 
 
-document.querySelectorAll('.CheckBox').forEach(element => {
-    element.addEventListener('change', isCheckbox)
+// document.querySelectorAll('.CheckBox').forEach(element => {
+//     element.addEventListener('change', isCheckbox)
 
-});
+// });
 document.querySelectorAll('.search').forEach(element => {
     element.addEventListener('click', function () {
         flashColor(`contact${element.classList[2]}`)
@@ -248,29 +342,40 @@ document.querySelectorAll('.search').forEach(element => {
 })
 
 
-for(let i = 0; i<disablableBtns.length; i++){
+for (let i = 0; i < disablableBtns.length; i++) {
     let isDisabled = false
-    disablableBtns[i].addEventListener('click',function(e){
+    disablableBtns[i].addEventListener('click', function (e) {
         e.preventDefault()
-      if(isDisabled === false){
+        if (isDisabled === false) {
 
-        disablableBtns[i].style.backgroundColor ="gray"
-        document.querySelector(`.${disablableBtns[i].classList[3]}_input`).disabled = true
-        // disablableBtns[i].classList.add('thisBtnDisabled')
-        localStorage.setItem(`isBtnDisabled_${disablableBtns[i].classList[3]}_input}`,document.querySelector(`.${disablableBtns[i].classList[3]}_input`).disabled)
+            disablableBtns[i].style.backgroundColor = "gray"
+            document.querySelector(`.${disablableBtns[i].classList[3]}_input`).disabled = true
 
-        isDisabled = true
-      }else{
+            if(disablableBtns[i].classList[3]  === 'mapLink'){
+                document.getElementById('C_image').disabled = true
 
-        disablableBtns[i].style.backgroundColor ="#FFB800"
-        document.querySelector(`.${disablableBtns[i].classList[3]}_input`).disabled = false
-        // disablableBtns[i].classList.remove('thisBtnDisabled')
-        localStorage.setItem(`isBtnDisabled_${disablableBtns[i].classList[3]}_input}`,document.querySelector(`.${disablableBtns[i].classList[3]}_input`).disabled)
+            }
+            // disablableBtns[i].classList.add('thisBtnDisabled')
+            // localStorage.setItem(`isBtnDisabled_${disablableBtns[i].classList[3]}_input}`, document.querySelector(`.${disablableBtns[i].classList[3]}_input`).disabled)
+
+            isDisabled = true
+        } else {
+
+            disablableBtns[i].style.backgroundColor = "#FFB800"
+            document.querySelector(`.${disablableBtns[i].classList[3]}_input`).disabled = false
+
+            if(disablableBtns[i].classList[3]  === 'mapLink'){
+                document.getElementById('C_image').disabled = false
+
+            }
+
+            // disablableBtns[i].classList.remove('thisBtnDisabled')
+            // localStorage.setItem(`isBtnDisabled_${disablableBtns[i].classList[3]}_input}`, document.querySelector(`.${disablableBtns[i].classList[3]}_input`).disabled)
 
 
-        isDisabled = false
+            isDisabled = false
 
-      }
+        }
     })
 }
 
@@ -296,6 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 })
+
 
 
 

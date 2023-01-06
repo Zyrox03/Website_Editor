@@ -229,27 +229,27 @@ window.addEventListener('click', function(e){
 
 
 
-  const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
+  // const swiper = new Swiper('.swiper', {
+  //   // Optional parameters
+  //   direction: 'horizontal',
+  //   loop: true,
   
-    // If we need pagination
-    // pagination: {
-    //   el: '.swiper-pagination',
-    // },
+  //   // If we need pagination
+  //   // pagination: {
+  //   //   el: '.swiper-pagination',
+  //   // },
   
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
+  //   // Navigation arrows
+  //   navigation: {
+  //     nextEl: '.swiper-button-next',
+  //     prevEl: '.swiper-button-prev',
+  //   },
   
-    // And if we need scrollbar
-        // scrollbar: {
-        //   el: '.swiper-scrollbar',
-        // },
-  });
+  //   // And if we need scrollbar
+  //       // scrollbar: {
+  //       //   el: '.swiper-scrollbar',
+  //       // },
+  // });
   
 
 
@@ -273,3 +273,194 @@ Category_navLink.addEventListener('click',function(){
     isDropped = false;
   }
 })
+
+
+
+
+
+
+
+
+
+function onLoad(){
+  
+  // category Navigation on load
+
+  
+let categories = document.querySelector('.categories')
+
+function appendCategoryBlocks(model_Number) {
+    categories.innerHTML = ''
+
+    for (let i = 1; i <= model_Number; i++) {
+
+        let one_category = document.createElement('DIV')
+        one_category.classList.add('one_category')
+
+        let C_Link = document.createElement('A')
+        C_Link.href = ''
+
+        let black_on_hover = document.createElement('DIV')
+        black_on_hover.classList.add('black_on_hover')
+
+        let C_Image = document.createElement('IMG')
+        C_Image.src = `BackUp/Category${i}.png`
+        C_Image.alt = i
+
+        let button = document.createElement('BUTTON')
+        button.classList.add(`C_name_button_${i}`)
+        button.innerHTML = `Category ${i}`
+
+        C_Link.append(black_on_hover)
+        C_Link.append(C_Image)
+        C_Link.append(button)
+
+        one_category.append(C_Link)
+
+        categories.append(one_category)
+
+    }
+
+
+
+}
+  
+  let DropDown_Ul = document.querySelector('.DropDown ul')
+  let Categories_DropDown_Ul = document.querySelector('.Categories_DropDown ul')
+  
+  function appendCategoryNav(model_Number) {
+  
+      DropDown_Ul.innerHTML = ''
+      Categories_DropDown_Ul.innerHTML = ''
+  
+      for (let i = 1; i <= model_Number; i++) {
+  
+          let LI = document.createElement('LI')
+          let LI_side = document.createElement('LI')
+  
+  
+          let C_Nav_Link = document.createElement('A')
+          C_Nav_Link.href = ''
+          let C_NavSide_Link = document.createElement('A')
+          C_NavSide_Link.href = ''
+          C_NavSide_Link.innerHTML = `Category ${i}`
+          C_NavSide_Link.classList.add(`C_name_MainLink_${i}`)
+  
+  
+  
+  
+          let li_Line = document.createElement('DIV')
+          li_Line.classList.add('li_Line')
+  
+          let Li_P = document.createElement('P')
+          Li_P.innerHTML = `Category ${i}`
+          Li_P.classList.add(`C_name_SideLink_${i}`)
+  
+  
+  
+          // append for mainNav
+          C_Nav_Link.append(Li_P)
+          C_Nav_Link.append(li_Line)
+  
+          LI.append(C_Nav_Link)
+  
+          DropDown_Ul.append(LI)
+  
+          //append for side Nav
+  
+          LI_side.append(C_NavSide_Link)
+          Categories_DropDown_Ul.append(LI_side)
+  
+  
+  
+  
+  
+      }
+  
+  }
+  
+  appendCategoryNav(JSON.parse(localStorage.getItem("model_Number")))
+  appendCategoryBlocks(JSON.parse(localStorage.getItem("model_Number")))
+  
+  
+  // Category buttons & nav links get category name 
+
+  document.querySelector(`.category_title`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].title
+
+  if (document.querySelector(`.C_name_button_1`) === null) {
+ } else {
+     document.querySelector(`.C_name_button_1`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_1
+     document.querySelector(`.C_name_MainLink_1`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_1
+     document.querySelector(`.C_name_SideLink_1`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_1
+ 
+ }
+ 
+ if (document.querySelector(`.C_name_button_2`) === null) {
+ } else {
+     document.querySelector(`.C_name_button_2`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_2
+     document.querySelector(`.C_name_MainLink_2`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_2
+     document.querySelector(`.C_name_SideLink_2`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_2
+     
+ 
+ }
+ 
+ if (document.querySelector(`.C_name_button_3`) === null) {
+ } else {
+     document.querySelector(`.C_name_button_3`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_3
+     document.querySelector(`.C_name_MainLink_3`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_3
+     document.querySelector(`.C_name_SideLink_3`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_3
+     
+ 
+ }
+ 
+ if (document.querySelector(`.C_name_button_4`) === null) {
+ } else {
+     document.querySelector(`.C_name_button_4`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_4
+     document.querySelector(`.C_name_MainLink_4`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_4
+     document.querySelector(`.C_name_SideLink_4`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_4
+     
+ 
+ }
+ 
+ if (document.querySelector(`.C_name_button_5`) === null) {
+ } else {
+     document.querySelector(`.C_name_button_5`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_5
+     document.querySelector(`.C_name_MainLink_5`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_5
+     document.querySelector(`.C_name_SideLink_5`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_5
+     
+ 
+ }
+ 
+ if (document.querySelector(`.C_name_button_6`) === null) {
+ } else {
+     document.querySelector(`.C_name_button_6`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_6
+     document.querySelector(`.C_name_MainLink_6`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_6
+     document.querySelector(`.C_name_SideLink_6`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_6
+     
+ 
+ }
+ 
+ if (document.querySelector(`.C_name_button_7`) === null) {
+ } else {
+     document.querySelector(`.C_name_button_7`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_7
+     document.querySelector(`.C_name_MainLink_7`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_7
+     document.querySelector(`.C_name_SideLink_7`).innerHTML = JSON.parse(localStorage.getItem('Category_Names'))[0].name_7
+     
+ 
+ }
+ 
+ 
+  
+  
+  }
+  
+  // On load event 
+  
+  document.addEventListener('DOMContentLoaded', () => {
+  
+  
+        onLoad()
+  
+  
+  
+  })

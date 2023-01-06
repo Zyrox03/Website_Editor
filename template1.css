@@ -756,8 +756,8 @@ width: fit-content;
     height: fit-content;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content:space-evenly;
 }
 
 
@@ -772,37 +772,30 @@ width: fit-content;
 
 }
 
-.category_left_top {
-    width: 47%;
-    height: 40em;
-    margin: 0.5em;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.category_left_top .one_category {
-    width: 49.7%;
-    height: 49.5%;
+
+.one_category {
+    width: 20em;
+    height: 15em;
     background-color: gainsboro;
 
     position: relative;
-
-}
-
-.block_category {
-    position: relative;
     overflow: hidden;
 
+    margin: 1em;
+
+    box-shadow: 0 0 5px 1px rgb(190, 190, 190)
+
 }
 
-.block_category:hover .black_on_hover {
+
+
+.one_category:hover .black_on_hover {
     opacity: 0.4;
     z-index: 1;
 }
 
-.block_category:hover img {
+.one_category:hover img {
     transform: scale(1.1);
 }
 
@@ -814,36 +807,10 @@ width: fit-content;
     object-fit: cover;
 }
 
-.category_right_top {
-    width: 47%;
-    height: 40em;
 
-    background-color: gainsboro;
 
-    margin: 0.5em;
-    position: relative;
 
-}
 
-.category_left_bottom {
-    width: 47%;
-    height: 20em;
-    background-color: gainsboro;
-
-    margin: 0.5em;
-    position: relative;
-
-}
-
-.category_right_bottom {
-    width: 47%;
-    height: 20em;
-    background-color: gainsboro;
-
-    margin: 0.5em;
-    position: relative;
-
-}
 
 /* special  */
 
@@ -1075,10 +1042,6 @@ footer .store_logo_footer img {
     padding: 0 0.5em;
 }
 
-/* .footer_col:nth-of-type(4){
-    width: 25em;
-    background-color: palevioletred;
-} */
 
 
 footer ul {
@@ -1565,51 +1528,14 @@ footer .social_footer i a {
 
     }
 
-    .categories {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .category_left_top {
-        width: 95%;
-        height: fit-content;
-    }
-
-    .category_left_top .one_category {
-        width: 48%;
-        height: 13em;
-        margin-bottom: 1em;
-    }
-
-    .category_right_top {
-        width: 100%;
-        height: 23em;
-        background-color: red;
-    }
-
-    .category_left_bottom {
-        width: 95%;
-        height: 15em;
-    }
-
-    .category_right_bottom {
-        width: 95%;
-        height: 15em;
-    }
+  
+ 
 
 
 }
 
 @media screen and (max-width : 750px) {
-    .category_left_top {
-        height: fit-content;
-    }
-
-    .category_left_top .one_category {
-        width: 48%;
-        height: 13em;
-        margin-bottom: 1em;
-    }
+  
 
     .special {
         flex-direction: column;
@@ -1697,9 +1623,7 @@ footer .social_footer i a {
         width: 100%;
     }
 
-    .contact_info {
-        flex-wrap: wrap;
-    }
+   
 
     .social_info{
             flex-direction: row;
@@ -1777,51 +1701,15 @@ footer .social_footer i a {
     }
 
 
-    .category_left_top .one_category {
-        width: 48%;
-        height: 13em;
 
-        background-color: gainsboro;
-        margin-bottom: 0.5em;
-        position: relative;
-
-    }
-
-
-    .category_left_top {
-        margin: 0;
-        margin-bottom: 0.5em;
-        height: fit-content;
-    }
-
-    .category_right_top {
-        width: 93%;
-        height: 20em;
-        margin: 0;
-        margin-bottom: 0.5em;
-
-
-    }
-
-    .category_left_bottom {
-        width: 93%;
-        margin: 0;
-        margin-bottom: 0.5em;
-
-        height: 12em;
-    }
-
-    .category_right_bottom {
-        width: 93%;
-        height: 12em;
-        margin: 0;
-        margin-bottom: 0.5em;
-
-    }
+  
 }
 
 @media screen and (max-width : 400px) {
-
+    .one_category{
+        width: 90%;
+        margin: 2em 0;
+    }
     .one_feature {
         flex-direction: column;
         width: fit-content;
@@ -1843,17 +1731,6 @@ footer .social_footer i a {
         font-size: 12px;
     }
 
-    .category_left_top {
-        height: fit-content;
-
-    }
-
-    .category_left_top .one_category {
-
-        width: 100%;
-        margin-bottom: 1em;
-    }
-
 
     .one_info p {
         font-size: 0.75em;
@@ -1862,7 +1739,3 @@ footer .social_footer i a {
 }
 
 
-/* .swiper {
-  width: 600px;
-  height: 300px;
-} */

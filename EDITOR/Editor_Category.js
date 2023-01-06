@@ -67,7 +67,7 @@ let clearActiveModels = function () {
 let Categories_fill_inputs = document.querySelector('.Categories_fill_inputs')
 
 
-let EditBtn = document.querySelector(`.save_Category_info`)
+let EditBtn = document.querySelector(`.saveAll`)
 
 function append_LI(Category_link, i) {
 
@@ -297,8 +297,8 @@ function organiseCategories(CategoriesNumber) {
     } else if (CategoriesNumber === 3) {
 
         category_left_top.style.display = 'none'
-        document.querySelector(`.category_right_top`).style.width = '60%'
-        document.querySelector(`.category_right_top`).style.height = '25em'
+        // document.querySelector(`.category_right_top`).style.width = '60%'
+        // document.querySelector(`.category_right_top`).style.height = '25em'
         document.querySelector(`.Category_Block_${1}`).classList.add('hide_Category')
         document.querySelector(`.Category_Block_${2}`).classList.add('hide_Category')
         document.querySelector(`.Category_Block_${3}`).classList.add('hide_Category')
@@ -325,8 +325,8 @@ function organiseCategories(CategoriesNumber) {
 
     } else if (CategoriesNumber === 1) {
 
-        document.querySelector(`.category_right_top`).style.width = '25em'
-        document.querySelector(`.category_right_top`).style.height = '23em'
+        // document.querySelector(`.category_right_top`).style.width = '25em'
+        // document.querySelector(`.category_right_top`).style.height = '23em'
 
         document.querySelector(`.Category_Block_${7}`).classList.add('hide_Category')
         document.querySelector(`.Category_Block_${6}`).classList.add('hide_Category')
@@ -361,8 +361,8 @@ function organiseCategories(CategoriesNumber) {
 
 function restoreAllCategories() {
     category_left_top.style.display = 'flex'
-    document.querySelector(`.category_right_top`).style.width = '47%';
-    document.querySelector(`.category_right_top`).style.height = '40em'
+    // document.querySelector(`.category_right_top`).style.width = '47%';
+    // document.querySelector(`.category_right_top`).style.height = '40em'
 
 
     let allCategories = document.querySelectorAll('.block_category')
