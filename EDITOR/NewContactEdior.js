@@ -9,8 +9,8 @@ function disable() {
     Editor.style.height = '80px'
     Editor.style.borderRadius = '50%'
     Editor.style.top = '5em'
-    Editor.style.right = '10px'
-    // Editor.style.left = '10px'
+    // Editor.style.right = '10px'
+    Editor.style.left = '10px'
     Editor.style.cursor = 'pointer'
     Editor.style.overflow = 'hidden'
 
@@ -25,8 +25,8 @@ function enable() {
     Editor.style.height = '100vh'
     Editor.style.borderRadius = '0%'
     Editor.style.top = '0'
-    Editor.style.right = '0'
-    // Editor.style.left = '0'
+    // Editor.style.right = '0'
+    Editor.style.left = '0'
 
     Editor.style.cursor = 'default'
     Editor.style.overflowY = 'scroll'
@@ -71,20 +71,37 @@ let addContactInfo = (e) => {
         Email_Label: document.getElementById('Email_Label').value,
         Message_Label: document.getElementById('Message_Label').value,
         SendBtn_Label: document.getElementById('SendBtn_Label').value,
+
         Adresse: document.getElementById('Adresse').value,
         Tel_1: document.getElementById('Tel_1').value,
         Tel_2: document.getElementById('Tel_2').value,
         Email: document.getElementById('Email').value,
 
+
         // map info
 
-        MapLink : document.getElementById('map_link').value,
+        MapLink: document.getElementById('map_link').value,
 
         // Social values
 
         Instagram: document.getElementById('Instagram').value,
         Facebook: document.getElementById('Facebook').value,
         Twitter: document.getElementById('Twitter').value,
+
+
+        //are inputs disabled
+
+        isAdresseDisabled: document.querySelector(`.Adresse_input`).disabled,
+        isTel_1Disabled: document.querySelector(`.tel_1_input`).disabled,
+        isTel_2Disabled: document.querySelector(`.tel_2_input`).disabled,
+        isEmailDisabled: document.querySelector(`.email_input`).disabled,
+
+        isMapDisabled: document.querySelector(`.mapLink_input`).disabled,
+
+        isInstagramDisabled: document.querySelector(`.Instagram_input`).disabled,
+        isFacebookDisabled: document.querySelector(`.Facebook_input`).disabled,
+        isTwitterDisabled: document.querySelector(`.Twitter_input`).disabled,
+
 
 
 
@@ -114,18 +131,18 @@ let addContactInfo = (e) => {
 
     // give href value to map link
 
-    document.querySelector('.bigMap a').value =  JSON.parse(localStorage.getItem('formContact'))[0].MapLink
-    document.querySelector('.bigMap a').href =  JSON.parse(localStorage.getItem('formContact'))[0].MapLink
+    document.querySelector('.mapLink_info a').value = JSON.parse(localStorage.getItem('formContact'))[0].MapLink
+    document.querySelector('.mapLink_info a').href = JSON.parse(localStorage.getItem('formContact'))[0].MapLink
 
 
     // give href value to socials
 
-    document.querySelector('.fb_link').value =  JSON.parse(localStorage.getItem('formContact'))[0].Facebook
-    document.querySelector('.fb_link').href =  JSON.parse(localStorage.getItem('formContact'))[0].Facebook
-    document.querySelector('.Insta_link').value =  JSON.parse(localStorage.getItem('formContact'))[0].Instagram
-    document.querySelector('.Insta_link').href =  JSON.parse(localStorage.getItem('formContact'))[0].Instagram
-    document.querySelector('.Tweet_link').value =  JSON.parse(localStorage.getItem('formContact'))[0].Twitter
-    document.querySelector('.Tweet_link').href =  JSON.parse(localStorage.getItem('formContact'))[0].Twitter
+    document.querySelector('.fb_link').value = JSON.parse(localStorage.getItem('formContact'))[0].Facebook
+    document.querySelector('.fb_link').href = JSON.parse(localStorage.getItem('formContact'))[0].Facebook
+    document.querySelector('.Insta_link').value = JSON.parse(localStorage.getItem('formContact'))[0].Instagram
+    document.querySelector('.Insta_link').href = JSON.parse(localStorage.getItem('formContact'))[0].Instagram
+    document.querySelector('.Tweet_link').value = JSON.parse(localStorage.getItem('formContact'))[0].Twitter
+    document.querySelector('.Tweet_link').href = JSON.parse(localStorage.getItem('formContact'))[0].Twitter
 
 
 
@@ -164,46 +181,113 @@ function inputOnLoad() {
     document.getElementById('Tel_2').value = JSON.parse(localStorage.getItem('formContact'))[0].Tel_2
     document.getElementById('Email').value = JSON.parse(localStorage.getItem('formContact'))[0].Email
 
+    document.querySelector('.mapLink_input').value = JSON.parse(localStorage.getItem('formContact'))[0].MapLink
+    document.querySelector('.mapLink_info a').href = JSON.parse(localStorage.getItem('formContact'))[0].MapLink
 
-    document.querySelector('.mapLink_input').value =  JSON.parse(localStorage.getItem('formContact'))[0].MapLink
-    document.querySelector('.bigMap a').href =  JSON.parse(localStorage.getItem('formContact'))[0].MapLink
+    document.querySelector('.Facebook_input').value = JSON.parse(localStorage.getItem('formContact'))[0].Facebook
+    document.querySelector('.fb_link').href = JSON.parse(localStorage.getItem('formContact'))[0].Facebook
+    document.querySelector('.Instagram_input').value = JSON.parse(localStorage.getItem('formContact'))[0].Instagram
+    document.querySelector('.Insta_link').href = JSON.parse(localStorage.getItem('formContact'))[0].Instagram
+    document.querySelector('.Twitter_input').value = JSON.parse(localStorage.getItem('formContact'))[0].Twitter
+    document.querySelector('.Tweet_link').href = JSON.parse(localStorage.getItem('formContact'))[0].Twitter
 
 
+    
+    // conserve disabled buttons 
+if(JSON.parse(localStorage.getItem('formContact'))[0].isAdresseDisabled === true){
+    document.querySelector(`.Adresse_input`).disabled = JSON.parse(localStorage.getItem('formContact'))[0].isAdresseDisabled
+    document.querySelector('.disable_Adresse').style.backgroundColor = 'gray' 
+    document.querySelector(`.Adresse_info`).style.display = 'none'
+}
 
-    document.querySelector('.Facebook_input').value =  JSON.parse(localStorage.getItem('formContact'))[0].Facebook
-    document.querySelector('.fb_link').href =  JSON.parse(localStorage.getItem('formContact'))[0].Facebook
-    document.querySelector('.Instagram_input').value =  JSON.parse(localStorage.getItem('formContact'))[0].Instagram
-    document.querySelector('.Insta_link').href =  JSON.parse(localStorage.getItem('formContact'))[0].Instagram
-    document.querySelector('.Twitter_input').value =  JSON.parse(localStorage.getItem('formContact'))[0].Twitter
-    document.querySelector('.Tweet_link').href =  JSON.parse(localStorage.getItem('formContact'))[0].Twitter
+if(JSON.parse(localStorage.getItem('formContact'))[0].isTel_1Disabled === true){
+    document.querySelector(`.tel_1_input`).disabled = JSON.parse(localStorage.getItem('formContact'))[0].isTel_1Disabled
+    document.querySelector('.disable_Tel_1').style.backgroundColor = 'gray'
+    document.querySelector(`.tel_1_info`).style.display = 'none'
+
+
+}
+
+if(JSON.parse(localStorage.getItem('formContact'))[0].isTel_2Disabled === true){
+    document.querySelector(`.tel_2_input`).disabled = JSON.parse(localStorage.getItem('formContact'))[0].isTel_2Disabled
+    document.querySelector('.disable_Tel_2').style.backgroundColor = 'gray'
+    document.querySelector(`.tel_2_info`).style.display = 'none'
+
+
+}
+
+if(JSON.parse(localStorage.getItem('formContact'))[0].isEmailDisabled === true){
+    document.querySelector(`.email_input`).disabled = JSON.parse(localStorage.getItem('formContact'))[0].isEmailDisabled
+    document.querySelector('.disable_email').style.backgroundColor = 'gray'
+    document.querySelector(`.email_info`).style.display = 'none'
+
+
+}
+
+if(JSON.parse(localStorage.getItem('formContact'))[0].isMapDisabled === true){
+    document.querySelector(`.mapLink_input`).disabled = JSON.parse(localStorage.getItem('formContact'))[0].isMapDisabled
+    document.querySelector('.disable_Map').style.backgroundColor = 'gray'
+    document.querySelector(`.mapLink_info`).style.display = 'none'
+
+    document.querySelector(`.Map_file`).disabled = JSON.parse(localStorage.getItem('formContact'))[0].isMapDisabled
+
+}
+
+if( JSON.parse(localStorage.getItem('formContact'))[0].isInstagramDisabled === true){
+    document.querySelector(`.Instagram_input`).disabled = JSON.parse(localStorage.getItem('formContact'))[0].isInstagramDisabled
+    document.querySelector('.disable_Instagram').style.backgroundColor = 'gray'
+    document.querySelector(`.Instagram_info`).style.display = 'none'
+
+
+}
+
+if(JSON.parse(localStorage.getItem('formContact'))[0].isFacebookDisabled === true){
+    document.querySelector(`.Facebook_input`).disabled = JSON.parse(localStorage.getItem('formContact'))[0].isFacebookDisabled
+    document.querySelector('.disable_Facebook').style.backgroundColor = 'gray'
+    document.querySelector(`.Facebook_info`).style.display = 'none'
+
+
+}
+
+if(JSON.parse(localStorage.getItem('formContact'))[0].isTwitterDisabled === true){
+    document.querySelector(`.Twitter_input`).disabled = JSON.parse(localStorage.getItem('formContact'))[0].isTwitterDisabled
+    document.querySelector('.disable_Twitter').style.backgroundColor = 'gray'
+    document.querySelector(`.Twitter_info`).style.display = 'none'
+
+
+}
 
 
     // DOM (transfer values to page content)
 
-    if (JSON.parse(localStorage.getItem('formContact')) === null) {
-
-    } else {
-        document.querySelector('.contact_title').innerHTML = document.getElementById('Title').value
-        document.querySelector('.contact_description').innerHTML = document.getElementById('Description').value
-        document.querySelector('.YourName').innerHTML = document.getElementById('Name_Label').value
-        document.querySelector('.YourEmail').innerHTML = document.getElementById('Email_Label').value
-        document.querySelector('.YourMessage').innerHTML = document.getElementById('Message_Label').value
-        document.querySelector('.SEND').innerHTML = document.getElementById('SendBtn_Label').value
-        document.querySelector('.Adresse1_DIV').innerHTML = document.getElementById('Adresse').value
-        document.querySelector('.tel_1_DIV').innerHTML = document.getElementById('Tel_1').value
-        document.querySelector('.tel_2_DIV').innerHTML = document.getElementById('Tel_2').value
-        document.querySelector('.email_DIV').innerHTML = document.getElementById('Email').value
+    document.querySelector('.contact_title').innerHTML = document.getElementById('Title').value
+    document.querySelector('.contact_description').innerHTML = document.getElementById('Description').value
+    document.querySelector('.YourName').innerHTML = document.getElementById('Name_Label').value
+    document.querySelector('.YourEmail').innerHTML = document.getElementById('Email_Label').value
+    document.querySelector('.YourMessage').innerHTML = document.getElementById('Message_Label').value
+    document.querySelector('.SEND').innerHTML = document.getElementById('SendBtn_Label').value
+    document.querySelector('.Adresse1_DIV').innerHTML = document.getElementById('Adresse').value
+    document.querySelector('.tel_1_DIV').innerHTML = document.getElementById('Tel_1').value
+    document.querySelector('.tel_2_DIV').innerHTML = document.getElementById('Tel_2').value
+    document.querySelector('.email_DIV').innerHTML = document.getElementById('Email').value
 
 
 
 
 
-    }
 
 
 
 
 
+
+
+}
+
+
+// on load for category 
+
+function onLoadCategories() {
     // category Navigation on load
 
     let DropDown_Ul = document.querySelector('.DropDown ul')
@@ -320,20 +404,12 @@ function inputOnLoad() {
 
     }
 
-
-
-
 }
-
 
 // code to re write professionally 
 
 
 
-// document.querySelectorAll('.CheckBox').forEach(element => {
-//     element.addEventListener('change', isCheckbox)
-
-// });
 document.querySelectorAll('.search').forEach(element => {
     element.addEventListener('click', function () {
         flashColor(`contact${element.classList[2]}`)
@@ -341,41 +417,69 @@ document.querySelectorAll('.search').forEach(element => {
     })
 })
 
+function disableInput(i) {
+    disablableBtns[i].style.backgroundColor = "gray"
+    document.querySelector(`.${disablableBtns[i].classList[3]}_input`).disabled = true
+    document.querySelector(`.${disablableBtns[i].classList[3]}_info`).style.display = 'none'
+
+
+    if (disablableBtns[i].classList[3] === 'mapLink') {
+        document.getElementById('C_image').disabled = true
+
+
+    }
+
+}
+
+function enableInput(i) {
+
+    disablableBtns[i].style.backgroundColor = "#FFB800"
+    document.querySelector(`.${disablableBtns[i].classList[3]}_input`).disabled = false
+    document.querySelector(`.${disablableBtns[i].classList[3]}_info`).style.display = 'flex'
+
+
+    if (disablableBtns[i].classList[3] === 'mapLink') {
+        document.getElementById('C_image').disabled = false
+
+
+    }
+
+
+
+
+}
 
 for (let i = 0; i < disablableBtns.length; i++) {
-    let isDisabled = false
     disablableBtns[i].addEventListener('click', function (e) {
+    let isDisabled = document.querySelector(`.${disablableBtns[i].classList[3]}_input`).disabled
+
         e.preventDefault()
-        if (isDisabled === false) {
 
-            disablableBtns[i].style.backgroundColor = "gray"
-            document.querySelector(`.${disablableBtns[i].classList[3]}_input`).disabled = true
 
-            if(disablableBtns[i].classList[3]  === 'mapLink'){
-                document.getElementById('C_image').disabled = true
+        
 
-            }
-            // disablableBtns[i].classList.add('thisBtnDisabled')
-            // localStorage.setItem(`isBtnDisabled_${disablableBtns[i].classList[3]}_input}`, document.querySelector(`.${disablableBtns[i].classList[3]}_input`).disabled)
+        if (!isDisabled) {
 
-            isDisabled = true
+            disableInput(i)
+            isDisabled = true;
+
+
+
+
         } else {
 
-            disablableBtns[i].style.backgroundColor = "#FFB800"
-            document.querySelector(`.${disablableBtns[i].classList[3]}_input`).disabled = false
-
-            if(disablableBtns[i].classList[3]  === 'mapLink'){
-                document.getElementById('C_image').disabled = false
-
-            }
-
-            // disablableBtns[i].classList.remove('thisBtnDisabled')
-            // localStorage.setItem(`isBtnDisabled_${disablableBtns[i].classList[3]}_input}`, document.querySelector(`.${disablableBtns[i].classList[3]}_input`).disabled)
-
-
+            enableInput(i)
             isDisabled = false
 
+
         }
+
+
+        // console.log(document.querySelector(`.${disablableBtns[i].classList[3]}_input`).disabled)
+
+
+
+
     })
 }
 
@@ -387,6 +491,8 @@ for (let i = 0; i < disablableBtns.length; i++) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    onLoadCategories()
 
     if (JSON.parse(localStorage.getItem('formContact')) === null) {
 
